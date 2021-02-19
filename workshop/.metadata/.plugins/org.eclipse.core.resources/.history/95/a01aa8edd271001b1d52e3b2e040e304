@@ -1,0 +1,39 @@
+package com.example;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+
+public class ProductController {
+@Autowired
+ProductService pservice;
+	
+	@RequestMapping("/products")
+	public String getProducts(Model m) {
+		List<Product> prods = pservice.getAllProduct();
+		m.addAttribute(prods);
+		return "index";
+	}
+	
+	@RequestMapping("/add")
+	public String showAdd(Model m) {
+		Product product = new Product();
+		m.addAttribute("prod",product);
+		return "add-product";
+	}
+	
+	@PostMapping(path="/submit-form")
+	public String submitForm(@ModelAttribute("prod")Product p) {
+		System.out.println(p);
+		pservice.addProduct(p);
+		pservice.getAllProduct();
+		return "index";
+	}
+}

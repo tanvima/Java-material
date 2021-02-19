@@ -1,0 +1,25 @@
+package com.example;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Service("ProductServiceImpl")
+@Transactional
+public class ProductServiceImpl implements ProductService{
+
+	@Autowired
+	ProductRepository pr;
+	
+	@Override
+	public int addProduct(Product product) {
+		pr.save(product);
+		return 0;
+	}
+
+	@Override
+	public List<Product> getAllProduct() {
+		return pr.findAll();
+	}
+
+}

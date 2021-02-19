@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Hello</h1>
+<a href="<%=request.getContextPath()%>/add">Add</a>
+<br>
+<table border="1">
+	<tr>
+		<td>Sr.No</td>
+		<td>Name</td>
+		<td>Price</td>
+		<td>Mnufacturer</td>
+		<td>Update</td>
+		<td>Delete</td>
+	</tr>
+	<%-- <c:forEach var="u" items="${users}">
+		<tr>
+		<td>Sr.No</td>
+		<td><c:out value="${u.id}"></c:out></td>
+		<td><c:out value="${u.name}"></c:out></td>
+		<td><c:out value="${u.address}"> </c:out></td>
+		<td><a href="#">Update</a></td>
+		<td><a href="#">Delete</a></td>
+		</tr>
+	</c:forEach> 
+</body>
+</html>

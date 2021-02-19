@@ -1,0 +1,6 @@
+package com.example;
+
+public interface ProductService {
+
+	int addProduct(Product product);
+}

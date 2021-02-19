@@ -1,0 +1,16 @@
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class ProductServiceImpl implements ProductService{
+
+	@Autowired
+	ProductRepository pr;
+	
+	@Override
+	public int addProduct(Product product) {
+		
+		return 0;
+	}
+
+}

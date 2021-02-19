@@ -1,0 +1,12 @@
+package com.example;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface ProductService {
+
+	int addProduct(Product product);
+	List<Product> getAllProduct();
+	void delProduct(int id);
+	Optional<Product> getProduct(int id);
+}
